@@ -42,7 +42,9 @@ class Calculator
                 $slice = $nextDistance->getStart() - $currentDistance->getStart();
                 $remainingDistance -= $slice;
 
-                if ($remainingDistance >= 0) $result += $slice * $currentDistance->getCost(); else
+                if ($remainingDistance >= 0)
+                    $result += $slice * $currentDistance->getCost(); 
+                else
                     $result += ($slice - $remainingDistance) * $currentDistance->getCost();
             } else {
                 $result += $remainingDistance * $currentDistance->getCost();

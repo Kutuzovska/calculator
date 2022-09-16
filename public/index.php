@@ -17,5 +17,10 @@ $repository = new ArrayDistanceRepository();
 $calculator = new Calculator();
 $service = new CalculatorService($calculator, $repository);
 
-$result = $service->calculateDistanceCost(305);
-echo $result . PHP_EOL;
+try {
+    $result = $service->calculateDistanceCost(305);
+    echo $result . PHP_EOL;
+} catch (Exception $e) {
+    echo $e->getMessage();
+}
+
